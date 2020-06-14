@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <!--
+    WARNING! Make sure that you match all Quasar related
+    tags to the same version! (Below it's "@1.12.4")
+  -->
+
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@1.12.4/dist/quasar.min.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <!-- Add the following at the end of your body tag -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar@1.12.4/dist/quasar.umd.min.js"></script>
+    
+    <div id="q-app"></div>
+
+    <script type="text/x-template" id="checkbox-template">
+      <div class="checkbox-wrapper" @click="checked = !checked">
+        <div :class="{ checkbox: true, checked: checked }"></div>
+        <input type="checkbox" v-model="checked" />
+        <q-btn color="primary">Hello</q-btn>
+        <div class="title">{{ title }}</div>
+      </div>
+    </script>
+    <script>
+      /*
+        Example kicking off the UI. Obviously, adapt this to your specific needs.
+        Assumes you have a <div id="q-app"></div> in your <body> above
+       */
+      new Vue({
+        el: '#q-app',
+        template: '#checkbox-template',
+        data: function () {
+          return {
+            title: 'asd',
+            checked: false
+          }
+        },
+        methods: {},
+        // ...etc
+      })
+    </script>
+  </body>
+</html>
